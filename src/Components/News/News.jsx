@@ -6,7 +6,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 export default function News(props) {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [, setLoading] = useState(false);
   // const [totalArticles, setTotalArticles] = useState(0);
   const [page, setPage] = useState(1);
   let totalArticles = 20;
@@ -51,9 +51,7 @@ export default function News(props) {
               headlines{" "}
             </h2>
           </div>
-          {/* <div className="loading-div">
-            {loading && <Spinner />}
-          </div> */}
+          
 
           <InfiniteScroll
             dataLength={data.length}
