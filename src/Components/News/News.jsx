@@ -6,7 +6,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 export default function News(props) {
   const [data, setData] = useState([]);
-  const [, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   // const [totalArticles, setTotalArticles] = useState(0);
   const [page, setPage] = useState(1);
   let totalArticles = 20;
@@ -16,13 +16,13 @@ export default function News(props) {
   useEffect(() => {
     const fetchNews = async () => {
       let url = `https://api.thenewsapi.com/v1/news/top?api_token=${newsAPI_APIkey}&locale=in&language=en&categories=${props.category}&page=1`;
-      setLoading(true);
+      // setLoading(true);
       const response = await fetch(url);
       const news = await response.json();
       console.log(news.data);
       setData(news.data);
       // setTotalArticles(news.totalArticles);
-      setLoading(false);
+      // setLoading(false);
     };
     fetchNews();
   }, [props.category]);
@@ -31,12 +31,12 @@ export default function News(props) {
     let nextPage = page + 1;
     let url = `https://api.thenewsapi.com/v1/news/top?api_token=${newsAPI_APIkey}&locale=in&language=en&categories=${props.category}&page=${nextPage}`;
     setPage(nextPage);
-    setLoading(true);
+    // setLoading(true);
     const response = await fetch(url);
     const news = await response.json();
     // setData(data.concat(news.data));
     setData((prev) => prev.concat(news.data));
-    setLoading(false);
+    // setLoading(false);
     // setTotalArticles(news.totalArticles);
   };
 
