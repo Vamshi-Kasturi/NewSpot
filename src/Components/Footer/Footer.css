@@ -1,0 +1,170 @@
+.footer-main{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 2rem;
+}
+
+.footer-main .footer-logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem ;
+    width: 40% ; 
+} 
+ 
+.footer-main .footer-logo img{
+    width: 10rem;
+}
+
+.footer-main .footer-logo p{
+    color:rgb(111, 108, 108);
+    font-size: 1rem;
+}
+.footer-main .footer-logo .icons{
+    margin: 1rem 0 0 2rem;
+}
+.footer-main .footer-logo .icons a i{
+    font-size: 2rem;
+    color: blue;
+}
+
+.footer-main .footer-link{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 50%;
+}
+
+.footer-main .footer-link .link-divs{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 30%;
+}
+
+
+.footer-main .footer-link .link-divs h6{
+    font-size: 1.2rem;
+    margin: 1rem;
+    color: blue;
+}
+
+.footer-main .footer-link .link-divs ul{
+   list-style: none;
+   padding: 0;
+   margin-left: 1.5rem;
+}
+
+.footer-main .footer-link .link-divs ul li{
+   margin-bottom: 0.6rem;
+   padding: 0 1rem;
+}
+
+.footer-main .footer-link .link-divs ul li a{
+   text-decoration: none;
+    color:rgb(111, 108, 108);
+    transition: 0.2s ease-in-out;
+    font-size: 1rem;
+}
+
+.border{
+    width: 90%;
+    margin: 0 auto ;
+    height: 2px;
+    background: rgb(59, 125, 205);
+    margin-bottom: 1rem;
+}
+
+.credit-footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 1rem;
+}
+
+.credit-footer .author p a{
+    color: blue;
+    text-decoration: none;
+}
+
+
+
+/* CSS media queries */
+
+@media (max-width: 767px) {
+    .footer-main .footer-logo img {
+    width: 9rem;
+}
+.footer-main .footer-link {
+    width: 60%;
+}
+}
+
+@media (max-width: 639px) {
+    .footer-main {
+    align-items: center;
+    flex-direction: column;
+}
+
+    .footer-main .footer-logo .icons {
+    margin: 1rem 0;
+}
+
+.footer-main .footer-logo {
+    padding: 1rem;
+    width: 90%;
+}
+
+.footer-main .footer-link {
+    width: 90%;
+    margin-bottom: 2rem;
+}
+
+.credit-footer {
+    flex-direction: column-reverse;
+}
+
+.credit-footer .copy-right {
+    margin-top: 0.5rem;
+}  
+}
+
+@media (max-width: 474px) {
+    .footer-main .footer-logo img {
+    width: 7rem;
+}
+
+.footer-main .footer-logo p {
+    font-size: 0.8rem;
+}
+
+.footer-main .footer-link .link-divs h6 {
+    font-size: 1rem;
+    margin: 0.7rem;
+}
+
+.footer-main .footer-link .link-divs ul li a {
+
+    font-size: 0.8rem;
+}
+
+.footer-main .footer-link .link-divs ul li {
+    margin-bottom: 0.3rem;
+    padding: 0 0.5rem;
+}
+
+.news-place .heading h2{
+    font-size: 1.1rem;
+}
+
+    .footer-main .footer-logo .icons {
+    margin: 1rem 0;
+}
+
+
+    
+}
