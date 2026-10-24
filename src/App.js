@@ -1,46 +1,43 @@
-import React from 'react'
-import Navbar from './Components/Navbar/Navbar'
-import Filters from './Components/Filters/Filters'
-import News from './Components/News/News'
-import Footer from './Components/Footer/Footer'
+import React from 'react';
+import Navbar from './Components/Navbar/Navbar';
+import Filters from './Components/Filters/Filters';
+import Ticker from './Components/Ticker/Ticker';
+import News from './Components/News/News';
+import Footer from './Components/Footer/Footer';
+import BackToTop from './Components/BackToTop/BackToTop';
+import { NewsProvider } from './context/NewsContext';
 
 import {
   BrowserRouter as Router,
   Route,
   Routes
 } from "react-router-dom";
-import PropTypes from 'prop-types';
 
 export default function App() {
-  let pageSize = 9
+  const pageSize = 9;
+
   return (
-    <>
+    <NewsProvider>
       <Router>
         <Navbar />
         <Filters />
+        <Ticker />
         <Routes>
-          <Route exact path="/" element={<News pageSize={pageSize} key="general" category="general" />} />
-          <Route exact path="/general" element={<News pageSize={pageSize} key="general" category="general" />} />
-          <Route exact path="/business" element={<News pageSize={pageSize} key="business" category="business" />} />
-          <Route exact path="/entertainment" element={<News pageSize={pageSize} key="entertainment" category="entertainment" />} />
-          <Route exact path="/health" element={<News pageSize={pageSize} key="health" category="health" />} />
-          <Route exact path="/science" element={<News pageSize={pageSize} key="science" category="science" />} />
-          <Route exact path="/sports" element={<News pageSize={pageSize} key="sports" category="sports" />} />
-          <Route exact path="/tech" element={<News pageSize={pageSize} key="tech" category="tech" />} />
+          <Route path="/" element={<News pageSize={pageSize} key="general" category="general" />} />
+          <Route path="/general" element={<News pageSize={pageSize} key="general" category="general" />} />
+          <Route path="/business" element={<News pageSize={pageSize} key="business" category="business" />} />
+          <Route path="/tech" element={<News pageSize={pageSize} key="tech" category="tech" />} />
+          <Route path="/sports" element={<News pageSize={pageSize} key="sports" category="sports" />} />
+          <Route path="/entertainment" element={<News pageSize={pageSize} key="entertainment" category="entertainment" />} />
+          <Route path="/health" element={<News pageSize={pageSize} key="health" category="health" />} />
+          <Route path="/science" element={<News pageSize={pageSize} key="science" category="science" />} />
+          <Route path="/search" element={<News pageSize={pageSize} key="search" />} />
+          <Route path="/saved" element={<News pageSize={pageSize} key="saved" isSaved={true} />} />
+          <Route path="*" element={<News pageSize={pageSize} key="notfound" category="general" />} />
         </Routes>
         <Footer />
+        <BackToTop />
       </Router>
-    </>
-  )
-};
-
-News.defaultProps = {
-  category: "general",
-  pageSize: 9
-};
-
-
-News.propTypes = {
-  category: PropTypes.string,
-  pageSize: PropTypes.number
-};
+    </NewsProvider>
+  );
+}
