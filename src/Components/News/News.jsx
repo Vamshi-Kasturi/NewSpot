@@ -17,14 +17,12 @@ export default function News({ category = "general", pageSize = 9, isSaved = fal
   const [page, setPage] = useState(1);
   const [totalArticles, setTotalArticles] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
   const [usingFallback, setUsingFallback] = useState(false);
 
   const newsAPI_APIkey = process.env.REACT_APP_API;
 
   const fetchNews = useCallback(async () => {
     setIsLoading(true);
-    setError(null);
     setUsingFallback(false);
 
     // If viewing saved articles, load from context
@@ -69,7 +67,6 @@ export default function News({ category = "general", pageSize = 9, isSaved = fal
       setPage(1);
     } catch (err) {
       console.warn("News API fetch failed, switching to curated fallback:", err.message);
-      setError(err.message);
       const fallback = getMockArticlesForCategory(category);
       setData(fallback);
       setUsingFallback(true);
